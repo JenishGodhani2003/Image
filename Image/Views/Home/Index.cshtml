@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Text Extraction</title>
+</head>
+<body>
+    <h2>Upload Image</h2>
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" id="file" />
+        <input type="submit" value="Upload" />
+    }
+
+    @if (ViewBag.Text != null)
+    {
+        <h2>Extracted Text:</h2>
+        <p>@ViewBag.Text</p>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <h2>Error:</h2>
+        <p>@ViewBag.Error</p>
+    }
+</body>
+</html>
