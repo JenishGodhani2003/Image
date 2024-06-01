@@ -6,12 +6,10 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  my-job:
+    runs-on: self-hosted  # Specify that this job should run on a self-hosted runner
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run a script
-        run: echo Hello, world!
+      # Add more steps as needed
